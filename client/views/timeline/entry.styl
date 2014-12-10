@@ -1,0 +1,68 @@
+*
+  box-sizing: border-box;
+
+img
+  border: 0px none
+
+.timeline-entry-wrapper
+  position: relative
+  padding-left: 64px
+  margin-top: 15px
+  margin-bottom: 15px
+  border-top: 2px solid #FFF;
+  border-bottom: 2px solid #FFF;
+
+.timeline-avatar
+  float: left
+  margin-left: -64px
+  border-radius: 3px
+
+.timeline-entry
+  position: relative
+  background-color: #FFF
+  border: 1px solid #DDD
+  border-radius: 3px
+
+.timeline-entry-wrapper > .timeline-entry::before
+  border-right-color: #DDD !important
+  border-width: 8px
+
+.timeline-entry-wrapper > .timeline-entry::after
+  border-width: 7px
+  border-right-color: #F7F7F7 !important
+  margin-top: 1px
+  margin-left: 2px
+
+.timeline-entry-wrapper > .timeline-entry::after,
+.timeline-entry-wrapper > .timeline-entry::before
+  position: absolute
+  top: 11px
+  left: -16px
+  right: 100%
+  width: 0px
+  height: 0px
+  display: block
+  content: " "
+  border-color: transparent
+  border-style: solid solid outset
+  pointer-events: none
+
+.timeline-entry-header
+  padding-left: 15px
+  padding-right: 15px
+  color: #999
+  background-color: #F7F7F7
+  border-bottom: 1px solid #EEE
+  border-top-left-radius: 3px
+  border-top-right-radius: 3px
+
+.timeline-entry-header-text
+  max-width: 78%
+  padding-top: 10px
+  padding-bottom: 10px
+
+.entry-body
+  width: 100%
+  padding: 15px
+  overflow: visible
+  font-size: 14px
