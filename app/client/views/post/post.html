@@ -1,16 +1,25 @@
 <template name="post">
-  <div class="panel panel-default">
+  <div class="panel panel-default post-panel">
     <div class="panel-heading post-header">
-      {{> user }}
+      <img class="post-avatar" width="48" height="48" src="https://gp5.googleusercontent.com/-kHwFLpEgLt4/AAAAAAAAAAI/AAAAAAAAAAA/lZf5m8Lj7_U/s48-c-k-no/photo.jpg">
       <div class="post-user">
         User
+      </div>
+      <div class="post-menu">
+        <i class="fa fa-angle-down fa-lg"></i>
       </div>
     </div>
     <div class="panel-body">
       test
     </div>
-    <div class="post-tools">
-      <button class="btn btn-default">+1</button>
+    <div class="post-tools input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default like-btn">+1</button>
+        <button class="btn btn-default share-btn">
+          <i class="fa fa-share"></i>
+        </button>
+      </span>
+      <input class="form-control comment-box" type="text" placeholder="write a comment...">
     </div>
   </div>
 </template>
