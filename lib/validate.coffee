@@ -10,13 +10,26 @@
       if type.indexOf(':') >= 0
         [type, format] = type.split(':')[0]
 
-        if type in ['number', 'string', 'boolean']
+      switch type
+        when 'number', 'string', 'boolean'
           return yes if type is typeof value
 
-        else if type is 'array'
+        when 'array'
           if format?
-          for item in value
-            return no if not @isType(format, item)
-          return yes
+            for item in value
+              return no if not @isType(format, item)
+            return yes
+
+        when 'date'
+          date = new Date(value)
+
+          return no if date.toString is 'Invalid Date'
+          return yes if not format?
+
+          return no if value instanceof Date
+
+          switch format
+            when 'ISO 8061'
+              if date.toISOString() is value then yes else no
 
   return @
