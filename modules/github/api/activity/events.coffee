@@ -1,4 +1,4 @@
-$.extend GitHub.api,
+_.extend GitHub.api,
   'GET /events':
     doc: 'List public events'
     f: 'getEvents'
@@ -29,7 +29,7 @@ $.extend GitHub.api,
 
   'GET /users/:username/events':
     doc: "List events performed by a user. If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events."
-    f: 'getUserPerformedEvents':
+    f: 'getUserPerformedEvents'
 
   'GET /users/:username/events/public':
     doc: 'List public events performed by a user'

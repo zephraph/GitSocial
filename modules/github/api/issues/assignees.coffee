@@ -1,4 +1,4 @@
-$.extend GitHub.api,
+_.extend GitHub.api,
   'GET /repos/:owner/:repo/assignees':
     doc: "This call lists all the available assignees (owner + collaborators) to which issues may be assigned."
     f: 'getAssignees'

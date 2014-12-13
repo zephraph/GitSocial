@@ -1,7 +1,7 @@
-GitHub.api.starring.doc =
+GitHub.api.doc.starring =
   sort: 'One of created (when the repository was starred) or updated (when it was last pushed to).'
 
-$.extend GitHub.api,
+_.extend GitHub.api,
   'GET /repos/:owner/:repo/stargazers':
     doc: 'List Stargazers'
     f: 'getStargazers'
@@ -11,7 +11,7 @@ $.extend GitHub.api,
     f: 'getUserStarredRepos'
     params:
       sort: GitHub.api.types.sort
-        doc: GitHub.api.starring.doc.sort
+        doc: GitHub.api.doc.starring.sort
       direction: GitHub.api.types.direction
         
   'GET /user/starred':
@@ -19,7 +19,7 @@ $.extend GitHub.api,
     f: 'getMyStarredRepos'
     params:
       sort: GitHub.api.types.sort
-        doc: GitHub.api.starring.doc.sort
+        doc: GitHub.api.doc.starring.sort
       direction: GitHub.api.types.direction
 
   'GET /user/starred/:owner/:repo':

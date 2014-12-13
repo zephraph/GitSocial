@@ -28,7 +28,7 @@ issueParams =
     doc: "Only issues updated at or after this time are returned. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
     type: 'date:ISO 8601'
 
-$.extend GitHub.api,
+_.extend GitHub.api,
   'GET /issues':
     doc: "List all issues across all the authenticated user's visible repositories including owned repositories, member repositories, and organization repositories"
     f: 'getIssues'

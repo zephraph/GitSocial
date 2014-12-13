@@ -1,4 +1,4 @@
-$.extend GitHub.api,
+_.extend GitHub.api,
   'GET /feeds':
     doc: 'List feeds'
     f: 'getFeeds'

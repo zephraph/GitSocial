@@ -1,5 +1,5 @@
 extend = (obj1, obj2) ->
-  $.extend(obj2, obj1)
+  _.extend(obj2, obj1)
   obj2
 
 GitHub.api.types =

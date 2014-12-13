@@ -1,15 +1,15 @@
-$.extend GitHub.api,
+_.extend GitHub.api,
   'GET /users/:username':
     doc: 'Get a single user'
-    f: getUser
+    f: 'getUser'
 
   'GET /user':
     doc: 'Get the authenticated user'
-    f: getMe
+    f: 'getMe'
 
   'PATCH /user':
     doc: 'Update the authenticated user'
-    f: updateUserInfo
+    f: 'updateUserInfo'
     params:
       name:
         doc: 'The new name of the user'
@@ -36,7 +36,7 @@ $.extend GitHub.api,
 
   'GET /users':
     doc: 'Get all users'
-    f: getAllUsers
+    f: 'getAllUsers'
     params:
       since:
         doc: "The integer ID of the last User that you've seen."

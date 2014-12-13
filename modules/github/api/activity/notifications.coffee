@@ -6,7 +6,7 @@ GitHub.api.doc.notifications =
   subscribed: 'Determines if notifications should be received from this thread'
   ignored: 'Determines if all notifications should be blocked from this thread'
 
-$.extend GitHub.api,
+_.extend GitHub.api,
   'GET /notifications':
     doc: 'List all notifications for the current user, grouped by repository.'
     f: 'getNotifications'
