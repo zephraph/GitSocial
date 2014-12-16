@@ -1,11 +1,12 @@
-class GitSocial.Application extends Space.Application
+Namespace 'GitSocial', ->
+  class @Application extends Space.Application
 
-  RequiredModules: ['Space.ui']
+    RequiredModules: ['Space.ui']
 
-  configure: ->
+    configure: ->
 
-    # Routing
-    @injector.map('RouteController').toSingleton GitSocial.RouteController
+      # Routing
+      @injector.map('RouteController').toSingleton GitSocial.RouteController
 
-  run: ->
-    @injector.create 'RouteController'
+    run: ->
+      @injector.create 'RouteController'

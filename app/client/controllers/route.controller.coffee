@@ -1,6 +1,7 @@
-class GitSocial.RouteController extends Space.ui.RouteController
+Namespace 'GitSocial', ->
 
-  @toString: -> 'RouteController'
-  
-  configure: ->
-    @addRoute route for name, route of GitSocial.route
+  class @RouteController extends Space.ui.RouteController
+    @toString: -> 'RouteController'
+    
+    configure: ->
+      @addRoute route for name, route of GitSocial.route

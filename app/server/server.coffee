@@ -1,1 +1,3 @@
-class GitSocial.Application extends Space.Application
+Namespace 'GitSocial', ->
+
+  class @Application extends Space.Application

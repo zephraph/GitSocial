@@ -1,4 +1,3 @@
-GitSocial.route.index =
-
+Namespace 'GitSocial.route.index',
   path: '/'
   name: 'index'
