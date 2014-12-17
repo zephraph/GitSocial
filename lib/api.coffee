@@ -13,16 +13,29 @@ Namespace 'Utilities', ->
       [method, route] = rule.split(' ')
       route = route.split('/')
 
-      while route.length isnt 0
-        item = route.shift()
-        if item[0] is ':'
-          routeParams.push item[1..]
-
-      # TODO: Call calulate route
-
       return =>
         args = Array::slice.call arguments
-        @ajaxAdapter method, url + route, arguments
 
-    _calculateRoute: (route)
-      # TODO: finish route calculation
+        for i in [1..2]
+          temp = args.pop()
+          switch typeof temp
+            when 'function'
+              callback = temp
+            when 'object'
+              post = temp
+            else
+              args.push temp
+
+        route = @_constructRoute route args
+
+        @ajaxAdapter method, url + route, post, callback
+
+    _constructRoute: (route, args) ->
+      fullRoute = ''
+      while route.length isnt 0
+        temp = route.shift()
+        if temp[0] isnt ':'
+          fullRoute.concat '/', temp
+        else
+          fullRoute.concat '/', args.shift()
+      return fullRoute
