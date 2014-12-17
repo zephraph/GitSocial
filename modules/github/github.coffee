@@ -3,4 +3,4 @@ Namespace 'GitHub', ->
     @publish this, 'GitHub'
 
     configure: ->
-      GitHub.api = new Utilities.api('https://api.github.com', GitHub.api, HTTP)
+      GitHub.api = new api('https://api.github.com', GitHub.api, HTTP.call)

@@ -1,41 +1,42 @@
-Namespace 'Utilities', ->
-  class @api
-    construct: (url, api, ajaxAdpater) ->
-      @ajaxAdapter = ajaxAdapter
-      @url = url
+class @api
+  constructor: (url, api, ajaxAdapter) ->
+    @ajaxAdapter = ajaxAdapter
+    @url = url
 
-      for method, rule of api
-        @[method] = @_getConsumer rule
+    for method, rule of api
+      @[method] = @_getConsumer rule
 
-    _getConsumer: (rule) ->
-      routeParams = []
+  _getConsumer: (rule) ->
+    routeParams = []
 
-      [method, route] = rule.split(' ')
-      route = route.split('/')
+    [method, route] = rule.split(' ')
+    route = route.split('/')
 
-      return =>
-        args = Array::slice.call arguments
+    console.log 'building', method
 
-        for i in [1..2]
-          temp = args.pop()
-          switch typeof temp
-            when 'function'
-              callback = temp
-            when 'object'
-              post = temp
-            else
-              args.push temp
+    return =>
+      args = Array::slice.call arguments
 
-        route = @_constructRoute route args
+      for i in [1..2]
+        temp = args.pop()
+        switch typeof temp
+          when 'function'
+            callback = temp
+          when 'object'
+            options = temp
+          else
+            args.push temp
 
-        @ajaxAdapter method, url + route, post, callback
+      route = @_constructRoute route args
 
-    _constructRoute: (route, args) ->
-      fullRoute = ''
-      while route.length isnt 0
-        temp = route.shift()
-        if temp[0] isnt ':'
-          fullRoute.concat '/', temp
-        else
-          fullRoute.concat '/', args.shift()
-      return fullRoute
+      @ajaxAdapter method, url + route, options, callback
+
+  _constructRoute: (route, args) ->
+    fullRoute = ''
+    while route.length isnt 0
+      temp = route.shift()
+      if temp[0] isnt ':'
+        fullRoute += ('/' + temp)
+      else
+        fullRoute += ('/' + args.shift())
+    return fullRoute

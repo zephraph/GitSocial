@@ -1,7 +1,7 @@
 Namespace 'GitSocial', ->
   class @Application extends Space.Application
 
-    RequiredModules: ['Space.ui']
+    RequiredModules: ['Space.ui', 'GitHub']
 
     configure: ->
 
