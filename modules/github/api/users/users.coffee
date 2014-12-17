@@ -1,5 +1,5 @@
 Namespace 'GitHub.api',
-  'GET /users/:username': 'getUser'
-  'GET /user': 'getMe'
-  'PATCH /user': 'updateUserInfo'
-  'GET /users': 'getAllUsers'
+  'getUser': 'GET /users/:username'
+  'getMe': 'GET /user'
+  'updateUserInfo': 'PATCH /user'
+  'getAllUsers': 'GET /users'

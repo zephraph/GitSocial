@@ -1,7 +1,7 @@
 Namespace 'GitHub.api',
-  'GET /repos/:owner/:repo/stargazers': 'getStargazers'
-  'GET /users/:username/starred': 'getUserStarredRepos'
-  'GET /user/starred': 'getMyStarredRepos'
-  'GET /user/starred/:owner/:repo': 'isStarred'
-  'PUT /user/starred/:owner/:repo': 'star'
-  'DELETE /user/starred/:owner/:repo': 'unstar'
+  'getStargazers': 'GET /repos/:owner/:repo/stargazers'
+  'getUserStarredRepos': 'GET /users/:username/starred'
+  'getMyStarredRepos': 'GET /user/starred'
+  'isStarred': 'GET /user/starred/:owner/:repo'
+  'star': 'PUT /user/starred/:owner/:repo'
+  'unstar': 'DELETE /user/starred/:owner/:repo'
