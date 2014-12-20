@@ -1,8 +1,12 @@
-Namespace 'GitHub.api',
-  'getIssues': 'GET /issues'
-  'getMyIssues': 'GET /user/issues'
-  'getOrgIssues': 'GET /orgs/:org/issues'
-  'getRepoIssues': 'GET /repos/:owner/:repo/issues'
-  'getIssue': 'GET /repos/:owner/:repo/issues/:number'
-  'createIssue': 'POST /repos/:owner/:repo/issues'
-  'editIssue': 'PATCH /repos/:owner/:repo/issues/:number'
+Namespace 'GitHub', ->
+  if not @api? then @api = []
+
+  @api = _.union @api, [
+    'GET /issues'
+    'GET /user/issues'
+    'GET /orgs/:org/issues'
+    'GET /repos/:owner/:repo/issues'
+    'GET /repos/:owner/:repo/issues/:number'
+    'POST /repos/:owner/:repo/issues'
+    'PATCH /repos/:owner/:repo/issues/:number'
+  ]

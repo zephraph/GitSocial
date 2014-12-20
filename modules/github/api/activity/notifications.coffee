@@ -1,10 +1,14 @@
-Namespace 'GitHub.api',
-  'getNotifications': 'GET /notifications'
-  'getNotificationsForRepo': 'GET /repos/:owner/:repo/notifications'
-  'setNotificationsRead': 'PUT /notifications'
-  'setRepoNotificationsRead': 'PUT /repos/:owner/:repo/notifications'
-  'getThread': 'GET /notifications/threads/:id'
-  'markThreadRead': 'PATCH /notifications/threads/:id'
-  'isSubscribed': 'GET /notifications/threads/:id/subscription'
-  'setSubscription': 'PUT /notifications/threads/:id/subscription'
-  'deleteSubscription': 'DELETE /notifications/threads/:id/subscription'
+Namespace 'GitHub', ->
+  if not @api? then @api = []
+
+  @api = _.union @api, [
+    'GET /notifications'
+    'GET /repos/:owner/:repo/notifications'
+    'PUT /notifications'
+    'PUT /repos/:owner/:repo/notifications'
+    'GET /notifications/threads/:id'
+    'PATCH /notifications/threads/:id'
+    'GET /notifications/threads/:id/subscription'
+    'PUT /notifications/threads/:id/subscription'
+    'DELETE /notifications/threads/:id/subscription'
+  ]

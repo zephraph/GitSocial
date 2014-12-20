@@ -1,7 +1,11 @@
-Namespace 'GitHub.api',
-  'getStargazers': 'GET /repos/:owner/:repo/stargazers'
-  'getUserStarredRepos': 'GET /users/:username/starred'
-  'getMyStarredRepos': 'GET /user/starred'
-  'isStarred': 'GET /user/starred/:owner/:repo'
-  'star': 'PUT /user/starred/:owner/:repo'
-  'unstar': 'DELETE /user/starred/:owner/:repo'
+Namespace 'GitHub', ->
+  if not @api? then @api = []
+
+  @api = _.union @api, [
+    'GET /repos/:owner/:repo/stargazers'
+    'GET /users/:username/starred'
+    'GET /user/starred'
+    'GET /user/starred/:owner/:repo'
+    'PUT /user/starred/:owner/:repo'
+    'DELETE /user/starred/:owner/:repo'
+  ]

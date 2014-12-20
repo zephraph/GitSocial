@@ -1,11 +1,15 @@
-Namespace 'GitHub.api',
-  'getEvents': 'GET /events'
-  'getRepoEvents': 'GET /repos/:owner/:repo/events'
-  'getRepoIssueEvents': 'GET /repos/:owner/:repo/issues/events'
-  'getPublicNetworkRepoEvents': 'GET /networks/:owner/:repo/events'
-  'getOrgEvents': 'GET /orgs/:org/events'
-  'getReceivedEvents': 'GET /users/:username/received_events'
-  'getPublicReceivedEvents': 'GET /users/:username/received_events/public'
-  'getUserPerformedEvents': 'GET /users/:username/events'
-  'getPublicUserPerformedEvents': 'GET /users/:username/events/public'
-  'getOrgEvents': 'GET /users/:username/events/orgs/:org'
+Namespace 'GitHub', ->
+  if not @api? then @api = []
+
+  @api = _.union @api, [
+    'GET /events'
+    'GET /repos/:owner/:repo/events'
+    'GET /repos/:owner/:repo/issues/events'
+    'GET /networks/:owner/:repo/events'
+    'GET /orgs/:org/events'
+    'GET /users/:username/received_events'
+    'GET /users/:username/received_events/public'
+    'GET /users/:username/events'
+    'GET /users/:username/events/public'
+    'GET /users/:username/events/orgs/:org'
+  ]

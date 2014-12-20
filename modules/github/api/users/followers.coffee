@@ -1,9 +1,13 @@
-Namespace 'GitHub.api',
-  'getUserFollowers': 'GET /users/:username/followers'
-  'getMyFollowers': 'GET /user/followers'
-  'getWhoUserFollows': 'GET /users/:username/following'
-  'getWhoIFollow': 'GET /user/following'
-  'doIFollow': 'GET /user/following/:username'
-  'doesUserFollowOther': 'GET /users/:username/following/:target_user'
-  'follow': 'PUT /user/following/:username'
-  'unfollow': 'DELETE /user/following/:username'
+Namespace 'GitHub', ->
+  if not @api? then @api = []
+
+  @api = _.union @api, [
+    'GET /users/:username/followers'
+    'GET /user/followers'
+    'GET /users/:username/following'
+    'GET /user/following'
+    'GET /user/following/:username'
+    'GET /users/:username/following/:target_user'
+    'PUT /user/following/:username'
+    'DELETE /user/following/:username'
+  ]

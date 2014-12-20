@@ -1,5 +1,9 @@
-Namespace 'GitHub.api',
-  'getUser': 'GET /users/:username'
-  'getMe': 'GET /user'
-  'updateUserInfo': 'PATCH /user'
-  'getAllUsers': 'GET /users'
+Namespace 'GitHub', ->
+  if not @api? then @api = []
+
+  @api = _.union @api, [
+    'GET /users/:username'
+    'GET /user'
+    'PATCH /user'
+    'GET /users'
+  ]
