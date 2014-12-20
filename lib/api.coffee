@@ -1,10 +1,21 @@
 class @api
-  constructor: (url, api, ajaxAdapter) ->
-    @ajaxAdapter = ajaxAdapter
+  constructor: (url, api, adapter, parameters = {}) ->
+    @adapter = adapter
     @url = url
 
-    for method, rule of api
-      @[method] = @_getConsumer rule
+    for route in api
+      [verb, route] = rule.split(' ')
+      route = route.split('/')
+
+      # Create verb anchor point
+      verbItem = APIItemBuilder(null, null, verb: verb, config: parameters[verb] ? {})
+      @[verb] = verbItem
+      if parameters[verb]?.aliases?
+        for alias in parameters[verb].aliases
+          @[alias] = verbItem
+
+      # TODO write _buildRoute, erase other methods
+      @_buildRoute verbItem route
 
   _getConsumer: (rule) ->
     routeParams = []
@@ -29,7 +40,7 @@ class @api
 
       route = @_constructRoute route args
 
-      @ajaxAdapter method, url + route, options, callback
+      @adapter method, url + route, options, callback
 
   _constructRoute: (route, args) ->
     fullRoute = ''
