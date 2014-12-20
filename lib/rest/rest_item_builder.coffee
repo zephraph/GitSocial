@@ -1,4 +1,4 @@
-APIItemBuilder = (component, parent, attributes) ->
+RestItemBuilder = (component, parent, attributes) ->
 
   item = (args...) ->
     item.args = args
@@ -20,7 +20,13 @@ APIItemBuilder = (component, parent, attributes) ->
         route += '/' + arg
     return route
 
-  item.go = ->
-    item._buildRoute()
+  item.go = (options = {}) ->
+    for option of item._attributes
+      if not options[option]?
+        options[option] = item._attributes[option]
+
+    route = item._buildRoute()
+    a = item._attributes
+    a.ajaxAdapter a.verb, a.url + route, options
 
   return item
