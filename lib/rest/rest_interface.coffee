@@ -9,7 +9,7 @@ class RestInterface
       verbItem = RestItemBuilder(null, null, verb: verb, config: config[verb] ? {})
       verbItem._attributes.ajaxAdapter = config.ajaxAdapter
       verbItem._attributes.url = config.url
-      @[verb] = verbItem
+      @[verb.toLowerCase()] = verbItem
       if config[verb]?.aliases?
         for alias in config[verb].aliases
           @[alias] = verbItem
