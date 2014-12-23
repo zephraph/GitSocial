@@ -4,9 +4,8 @@ Namespace 'GitSocial', ->
     RequiredModules: ['Space.ui', 'GitHub']
 
     configure: ->
-
       # Routing
-      @injector.map('RouteController').toSingleton GitSocial.RouteController
+      @injector.map('GitSocial.RouteController').toSingleton GitSocial.RouteController
 
     run: ->
-      @injector.create 'RouteController'
+      @injector.create 'GitSocial.RouteController'
