@@ -1,4 +1,7 @@
-Namespace 'GitSocial.route.github',
+Namespace 'GitHub.route',
   path: '/github/(.*)'
   name: 'github'
   template: 'json'
+
+  action: ->
+    # do something
