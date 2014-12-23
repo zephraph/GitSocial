@@ -1,5 +1,4 @@
-
-class RestInterface
+class @RestInterface
   constructor: (api, config = {}) ->
 
     for rule in api

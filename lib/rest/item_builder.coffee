@@ -1,4 +1,4 @@
-RestItemBuilder = (component, parent, attributes) ->
+@RestItemBuilder = (component, parent, attributes) ->
 
   item = (args...) ->
     item.args = args
