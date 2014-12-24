@@ -1,5 +1,5 @@
 <head>
-    <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">
 </head>
 
 <template name="index">
@@ -9,19 +9,21 @@
 
     {{>titlebar}}
 
-    {{#Scrollview target="content"}}
+    {{#SequentialLayout target="content" direction="X"}}
+      {{#Scrollview}}
 
-    {{#Surface size="[undefined, true]"}}
-      {{>post}}
-    {{/Surface}}
-    {{#Surface size="[undefined, true]"}}
-      {{>post}}
-    {{/Surface}}
-    {{#Surface size="[undefined, true]"}}
-      {{>post}}
-    {{/Surface}}
+      {{#Surface size="[undefined, true]"}}
+        {{>post}}
+      {{/Surface}}
+      {{#Surface size="[undefined, true]"}}
+        {{>post}}
+      {{/Surface}}
+      {{#Surface size="[undefined, true]"}}
+        {{>post}}
+      {{/Surface}}
 
-    {{/Scrollview}}
+      {{/Scrollview}}
+    {{/SequentialLayout}}
 
   {{/HeaderFooterLayout}}
 {{/famousContext}}
