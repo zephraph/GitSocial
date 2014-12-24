@@ -4,4 +4,7 @@ Namespace 'GitSocial', ->
     @toString: -> 'GitSocial.RouteController'
     
     configure: ->
+      @router.configure
+        layoutTemplate: 'main'
+
       @addRoute route for name, route of GitSocial.route
