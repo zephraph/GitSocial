@@ -5,16 +5,23 @@
 <template name="index">
 
 {{#famousContext id="mainCtx"}}
-
   {{#HeaderFooterLayout headerSize="44"}}
 
     {{>titlebar}}
 
-    {{#Surface target="content"}}
-      {{>post}}
-      {{>post}}
+    {{#Scrollview target="content"}}
+
+    {{#Surface size="[undefined, true]"}}
       {{>post}}
     {{/Surface}}
+    {{#Surface size="[undefined, true]"}}
+      {{>post}}
+    {{/Surface}}
+    {{#Surface size="[undefined, true]"}}
+      {{>post}}
+    {{/Surface}}
+
+    {{/Scrollview}}
 
   {{/HeaderFooterLayout}}
 {{/famousContext}}

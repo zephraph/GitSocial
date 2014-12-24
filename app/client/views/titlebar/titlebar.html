@@ -1,13 +1,14 @@
 <template name="titlebar">
-    {{#Surface target="header" class="titlebar"}} {{/Surface}}
+  {{#StateModifier target="header" translate="[0, 0, 0.2]"}}
+    {{#Surface class="titlebar"}} {{/Surface}}
 
-    {{#StateModifier target="header" origin="[0,0.5]" align="[0.006,0.5]"}}
+    {{#StateModifier origin="[0,0.5]" align="[0.006,0.5]"}}
       {{#Surface target="header" size="[true,true]" class="titlebar menu"}}
         <i class="fa fa-bars fa-2x"> <div class="title-text"> Git Social </div> </i>
       {{/Surface}}
     {{/StateModifier}}
 
-    {{#StateModifier target="header" origin="[1,0.5]" align="[0.994,0.5]" class="titlebar search"}}
+    {{#StateModifier origin="[1,0.5]" align="[0.994,0.5]" class="titlebar search"}}
       {{#Surface size="[true,true]"}}
         <div class="input-group">
           <input type="text" placeholder="Search GitSocial..." class="form-control">
@@ -21,4 +22,5 @@
       {{/Surface}}
     {{/StateModifier}}
 
+  {{/StateModifier}}
 </template>
