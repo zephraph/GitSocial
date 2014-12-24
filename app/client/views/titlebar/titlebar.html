@@ -1,16 +1,24 @@
 <template name="titlebar">
-    {{#Surface class="titlebar" target="header"}}
-      <div class="titlebar left">
-        <i class="fa fa-bars fa-lg titlebtn"></i> GitSocial
-      </div>
-      <div class="titlebar right input-group">
-        <input type="text" placeholder="Search GitSocial..." class="form-control">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
-            <i class="fa fa-search"></i>
-          </button>
-        </span>
-        
-      </div>
-    {{/Surface}}
+    {{#Surface target="header" class="titlebar"}} {{/Surface}}
+
+    {{#StateModifier target="header" origin="[0,0.5]" align="[0.006,0.5]"}}
+      {{#Surface target="header" size="[true,true]" class="titlebar menu"}}
+        <i class="fa fa-bars fa-2x"> <div class="title-text"> Git Social </div> </i>
+      {{/Surface}}
+    {{/StateModifier}}
+
+    {{#StateModifier target="header" origin="[1,0.5]" align="[0.994,0.5]" class="titlebar search"}}
+      {{#Surface size="[true,true]"}}
+        <div class="input-group">
+          <input type="text" placeholder="Search GitSocial..." class="form-control">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <i class="fa fa-search"></i>
+            </button>
+          </span>
+          
+        </div>
+      {{/Surface}}
+    {{/StateModifier}}
+
 </template>
