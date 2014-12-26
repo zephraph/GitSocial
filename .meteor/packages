@@ -11,7 +11,6 @@ accounts-github
 space:base
 space:ui
 mquandalle:stylus
-mizzao:bootstrap-3
 linto:fontawesome
 accounts-ui
 stevezhu:lodash
@@ -19,3 +18,4 @@ simple:highlight.js
 gadicohen:famous-views
 http
 mjn:famous
+nooitaf:semantic-ui

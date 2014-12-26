@@ -3,21 +3,16 @@
     {{#Surface class="titlebar"}} {{/Surface}}
 
     {{#StateModifier origin="[0,0.5]" align="[0.006,0.5]"}}
-      {{#Surface target="header" size="[true,true]" class="titlebar menu"}}
+      {{#Surface target="header" size="[true,true]"}}
         <i class="fa fa-bars fa-2x"> <div class="title-text"> Git Social </div> </i>
       {{/Surface}}
     {{/StateModifier}}
 
-    {{#StateModifier origin="[1,0.5]" align="[0.994,0.5]" class="titlebar search"}}
-      {{#Surface size="[300,true]"}}
-        <div class="input-group">
-          <input type="text" placeholder="Search GitSocial..." class="form-control">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <i class="fa fa-search"></i>
-            </button>
-          </span>
-          
+    {{#StateModifier origin="[1,0.5]" align="[0.994,0.5]"}}
+      {{#Surface size="[300,39]"}}
+        <div class="ui fluid icon input">
+          <input type="text" placeholder="Search GitSocial...">
+          <i class="search icon"></i>
         </div>
       {{/Surface}}
     {{/StateModifier}}
