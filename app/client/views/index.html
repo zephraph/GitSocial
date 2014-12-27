@@ -4,21 +4,11 @@
 
     {{>titlebar}}
 
-    {{#SequentialLayout target="content" direction="X"}}
-      {{#Scrollview align="[0.5,0]" origin="[0.5,0]" proportions="[0.4, 1]"}}
-
+    {{#Scrollview target="content" align="[0.5,0]" origin="[0.5,0]" proportions="[0.4, 1]"}}
       {{#Surface size="[undefined, true]"}}
-        {{>post}}
+        {{>feed}}
       {{/Surface}}
-      {{#Surface size="[undefined, true]"}}
-        {{>post}}
-      {{/Surface}}
-      {{#Surface size="[undefined, true]"}}
-        {{>post}}
-      {{/Surface}}
-
-      {{/Scrollview}}
-    {{/SequentialLayout}}
+    {{/Scrollview}}
 
   {{/HeaderFooterLayout}}
 

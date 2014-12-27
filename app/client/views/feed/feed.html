@@ -1,0 +1,10 @@
+<template name="feed">
+  <div class="ui raised segment">
+    {{#each posts}}
+      {{#unless _first}}
+        <div class="ui divider"></div>
+      {{/unless}}
+      {{>post}}
+    {{/each}}
+  </div>
+</template>

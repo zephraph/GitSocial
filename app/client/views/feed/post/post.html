@@ -1,0 +1,33 @@
+<template name="post">
+  <div class="post">
+    <div class="ui vertical segment">
+      <div class="ui grid">
+
+        <div class="two column row">
+          <div class="left floated column">
+            <img class="ui left floated avatar image" src="/user.png">
+            {{user}}
+            <b>{{action}}</b>
+          </div>
+
+          <div class="right floated right aligned column">
+            <i class="fa fa-angle-down fa-lg"></i>
+          </div>
+        </div>
+
+      </div>
+
+          <div class="ui basic compact segment">
+            <p>{{content}}</p>
+          </div>
+
+      <div class="ui ribbon label">
+        32 likes
+        <button class="ui blue button right attached">
+          +
+        </button>
+      </div>
+
+    </div>
+  </div>
+</template>
