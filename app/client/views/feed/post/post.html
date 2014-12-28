@@ -17,15 +17,23 @@
 
       </div>
 
-          <div class="ui basic compact segment">
-            <p>{{content}}</p>
-          </div>
+      <div class="ui basic compact segment">
+        <p>{{content}}</p>
+      </div>
 
       <div class="ui ribbon label">
-        32 likes
+        {{#if likes}}
+          {{likes}} likes
+        {{/if}}
         <button class="ui blue button right attached">
           +
         </button>
+      </div>
+
+      <div class="actions">
+        <div class="ui mini button"><i class="share icon"></i></div>
+        <div class="ui mini button"><i class="comment icon"></i></div>
+        <div class="ui mini button"><i class="flag icon"></i></div>
       </div>
 
     </div>
