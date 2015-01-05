@@ -7,7 +7,7 @@ Template.feed.helpers
           url: '#'
           icon:
             action: 'edit'
-            url: 'https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/user.png'
+            url: '/user.png'
         date: '1 hour ago'
         summary: 'posted a status'
         likes: 32
