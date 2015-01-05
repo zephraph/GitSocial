@@ -8,6 +8,7 @@ autopublish
 insecure
 coffeescript
 accounts-github
+accounts-password
 space:base
 space:ui
 mquandalle:stylus
@@ -15,8 +16,6 @@ linto:fontawesome
 accounts-ui
 stevezhu:lodash
 simple:highlight.js
-gadicohen:famous-views
 http
-mjn:famous
 nooitaf:semantic-ui
 zephraph:namespace

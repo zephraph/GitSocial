@@ -1,0 +1,24 @@
+<template name="feed_event">
+  <div class="event">
+  	<div class="label">
+      <img src="{{actor.icon.url}}">
+    </div>
+    <div class="content">
+    	<div class="summary">
+        <a class="user" href="{{actor.url}}">
+          {{actor.name}}
+        </a>
+        {{summary}}
+        <div class="date">{{date}}</div>
+      </div>
+      <div class="meta">
+        <a class="like">
+          <i class="like icon"></i>
+          {{#if likes}}
+            {{likes}} likes
+          {{/if}}
+        </a>
+      </div>
+    </div>
+  </div>
+</template>

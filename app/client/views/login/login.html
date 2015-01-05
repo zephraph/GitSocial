@@ -1,14 +1,29 @@
 <template name="login">
-  {{#Surface size="[330,460]" align="[0.5,0.5]" origin="[0.5,0.5]" class="login"}}
-    <div class="ui center aligned segment">
-      <img class="login-logo" src="/placeholder.gif"/>
-      <button class="ui blue submit login button" type="button">Authorize on GitHub</button>
-      <div class="ui horizontal divider">
-        Or
-      </div>
-      <button class="ui fluid button" type="button">
-        Login
-      </button>
+  <div class="ui login grid">
+
+    <div class="mobile only row">
+      {{>mobile_login}}
     </div>
-  {{/Surface}}
+
+    <div class="computer tablet only row">
+      <div class="ui three column centered grid">
+
+        <div class="column centered">
+          <div class="ui center aligned segment">
+            <img class="login-logo" src="/gitsocial.svg">
+            <h1>GitSocial</h1>
+            {{#if authGitHub}}
+              {{>login_github}}
+            {{else}}
+              {{>login_password}}
+            {{/if}}
+          </div>
+          {{#if allowRegistration}}
+            <a id="register">Register</a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+
+  </div>
 </template>
