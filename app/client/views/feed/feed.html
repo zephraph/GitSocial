@@ -1,7 +1,26 @@
 <template name="feed">
-  <div class="ui feed">
-    {{#each events}}
-      {{>feed_event}}
-    {{/each}}
+  <div class="feed">
+    <div class="ui grid">
+      <div class="computer tablet only row">
+        <div class="ui two column centered grid">
+          <div class="column centered">
+            <div class="ui segment">
+              <form class="ui form">
+                <div class="field">
+                  <textarea></textarea>
+                </div>
+                <div class="ui blue centered submit button">Post Status</div>
+              </form>
+              <div class="ui divider"></div>
+              <div class="ui feed">
+                {{#each events}}
+                  {{>feed_event}}
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
