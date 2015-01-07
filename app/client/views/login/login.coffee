@@ -2,8 +2,9 @@ Template.login.helpers
   authGitHub:
     false
 
-  allowRegistration:
-    true
+  allowRegistration: ->
+    if window.location.pathname is GitSocial.route.register.path then false else true
+
 
 Template.login.events
   'keypress #pass,#user': ->

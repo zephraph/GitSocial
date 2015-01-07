@@ -12,14 +12,10 @@
           <div class="ui center aligned segment">
             <img class="login-logo" src="/gitsocial.svg">
             <h1>GitSocial</h1>
-            {{#if authGitHub}}
-              {{>login_github}}
-            {{else}}
-              {{>login_password}}
-            {{/if}}
+            {{> yield }}
           </div>
           {{#if allowRegistration}}
-            <a id="register">Register</a>
+            <a id="register" class="hidden" href="/registration">Register</a>
           {{/if}}
         </div>
       </div>

@@ -1,0 +1,25 @@
+<template name="register">
+  <div class="register">
+    <div class="ui stackable two column grid">
+      <div class="top row"></div>
+      <div class="center aligned column row">
+        <div class="welcome column">
+          <h1>GitSocial {{> logo size="mini"}} </h1> 
+          <h3>Join the conversation</h3>
+        </div>
+        <div class="register column">
+          <div class="ui segment">
+            <div class="ui input">
+              <input id="user" type="text" placeholder="Username">
+              <input id="email" type="email" placeholder="Email">
+              <input id="pass" type="password" placeholder="Password">
+              <input id="repeat" type="password" placeholder="Confirm Password">
+              <button class="ui inverted green submit fluid button">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom row"></div>
+    </div>
+  </div>
+</template>
